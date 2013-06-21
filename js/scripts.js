@@ -1,4 +1,4 @@
-// Starting Point Scripts by IES Group Inc. www.iesgroup.ca
+// Starting Point Scripts
 (function() {
 // iPhone 5 WebApp height Fix
       if (window.screen.height==568) {
