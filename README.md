@@ -6,7 +6,7 @@ A Website Starting Point built on a Bootstrap 3 framework
 
 Including the things I like to use when I start a project.
 
-Bootstrap 3.0.3
+Bootstrap 3.1.0
 -using Dist build of bootstrap.js
 -using LESS files to compile bootstrap.css
 
