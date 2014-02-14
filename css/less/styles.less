@@ -2,12 +2,53 @@
 
 @import "variables.less";
 @import "mixins.less";
-@import "theme.less";
+//@import "theme.less";
 
-.navbar-toggle{
-    margin: (@navbar-height / 2)-30px 0;
-    margin-right: 15px;
-    height: 60px;
+body{
+	z-index: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-width: 100%;
+}
+.menuToggle{
+    line-height: @navbar-height + 10;
+    margin: 0 5px;
+    height: @navbar-height;
+}
+
+//SLIDE OUT MENU
+.slide-left{
+	position: fixed;
+	.backface-visibility(hidden);
+	.transition(left 0.1s ease-in-out);
+	width: 80%;
+	left: -80%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1001;
+	&.open{
+		left: 0;
+	}
+}
+.slide-right{
+	position: relative;
+	.backface-visibility(hidden);
+	.transition(left 0.1s ease-in-out);
+	left: 0;
+	width: auto;
+	overflow-y: auto;
+	&.open{
+		left: 80%;
+		& .closeSlide{
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 80%;
+			z-index: 3000;
+		}
+	}
 }
 
 @import "mediaqueries.less";

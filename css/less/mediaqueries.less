@@ -2,14 +2,20 @@
 //Default Style apply to Mobile First
 //-------------------------------------------------------All Sizes Touch Screens
 html.touch{
-
+	.slide-left, .slide-right{
+        .transition(left 0 linear);
+    }
 }
 //-------------------------------------------------------Minimum Size and Up Changes
 @media (min-width: @screen-sm) {
     
 }
 @media (min-width: @screen-md) {
-    
+    .navbar-brand.hidden-sm.hidden-xs {
+		display: block;
+		float: none;
+		height: auto;
+	}
 }
 @media (min-width: @screen-lg) {
     
@@ -17,14 +23,59 @@ html.touch{
 
 //------------------------------------------------------------Specific Size Only
 @media (max-width: @screen-xs-max) {
-    
 }
 @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
-    
+    .slide-left{
+        width: 30%;
+        left: -30%;
+        &.open{
+            left: 0;
+        }
+    }
+    .slide-right{
+        &.open{
+            left: 30%;
+            & .closeSlide{
+                left: 30%;
+            }
+        }
+    }
 }
 @media (min-width: @screen-md) and (max-width: @screen-md-max) {
-    
+    .slide-left{
+        width: 20%;
+        left: 0;
+        &.open{
+            left: 0;
+        }
+    }
+    .slide-right{
+    	left: 20%;
+    	width: 80%;
+        &.open{
+            left: 20%;
+            & .closeSlide{
+                display: none;
+            }
+        }
+    }
 }
 @media (min-width: @screen-lg) {
-   
+    .slide-left{
+        width: 15%;
+        left: 0;
+        &.open{
+            left: 0;
+        }
+    }
+    .slide-right{
+    	left: 15%;
+    	width: 85%;
+        &.open{
+            left: 15%;
+            & .closeSlide{
+                display: none;
+            }
+        }
+    }
 }
