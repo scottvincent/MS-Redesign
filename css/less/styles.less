@@ -10,6 +10,13 @@ body{
 	overflow-y: auto;
 	max-width: 100%;
 }
+.navbar-brand {
+	display: block;
+	float: none;
+	margin: 0 auto;
+	width: 200px;
+	text-align: center;
+}
 .menuToggle{
     line-height: @navbar-height + 10;
     margin: 0 5px;
@@ -37,7 +44,6 @@ body{
 	.transition(left 0.1s ease-in-out);
 	left: 0;
 	width: auto;
-	overflow-y: auto;
 	&.open{
 		left: 80%;
 		& .closeSlide{

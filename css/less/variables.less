@@ -1,7 +1,20 @@
 //
 // Variables
 // --------------------------------------------------
+//== Custom
+@chosenColor: #142850;
 
+@themeColor: #d69c1a;//contrast(@chosenColor, @chosenColor, hsl(hue(@chosenColor), saturation(@chosenColor), 43%), 43%);
+@themeAccent: #142850;//contrast(spin(@themeColor, 180), spin(@themeColor, 180), hsl(hue(spin(@themeColor, 180)), saturation(@themeColor), 43%), 43%);  
+@themeText: #fff;
+@themeDesaturate: desaturate(@themeColor, 0%);
+
+@facebookBlue: #3B5998; //#4C66A4;
+@twitterBlue: #00ACEE;
+@googleRed: #DD4B39;//#DB5149;
+@pinterestRed: #cb2027;
+
+@navWidth: 205px;
 
 //== Colors
 //
@@ -817,11 +830,11 @@
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            (((940px*0.8) + @grid-gutter-width));
+@container-desktop:            ((940px + @grid-gutter-width));
 //** For `@screen-md-min` and up.
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      (((1140px*0.85) + @grid-gutter-width));
+@container-large-desktop:      ((1140px + @grid-gutter-width));
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
