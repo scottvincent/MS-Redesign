@@ -1,0 +1,253 @@
+//Media Sonar Redesign Styles
+
+@import "variables.less";
+@import "mixins.less";
+//@import "theme.less";
+
+body{
+	z-index: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-width: 100%;
+	padding-top: @navbar-height;
+}
+.navbar-brand {
+	display: block;
+	float: none;
+	margin: 0 auto;
+	width: 200px;
+	text-align: center;
+	& img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+.menuToggle{
+    line-height: @navbar-height + 10;
+    margin: 0 5px;
+    height: @navbar-height;
+}
+
+//SLIDE OUT MENU
+.slide-left{
+	font-size: 12px;
+	position: fixed;
+	.backface-visibility(hidden);
+	.transition(left 0.1s ease-in-out);
+	width: 80%;
+	left: -80%;
+	height: 100%;
+	padding-bottom: @navbar-height;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1001;
+	border-right: 1px solid @navbar-default-border;
+	&.open{
+		left: 0;
+	}
+	& .nav{
+		& li{
+			& a{
+				border-top: 1px solid  rgba(255,255,255,0.1);
+				border-bottom: 1px solid  rgba(0,0,0,0.1);
+			}
+			&.userHeader{
+				padding: 0 14px;
+				border-top: 1px solid  rgba(255,255,255,0.1);
+				font-weight: 600;
+				.text-overflow();
+				background: @chosenColor;
+				color: #fff;
+				font-size: 1.1em;
+				line-height: 2.4em;
+				& img{
+					vertical-align: middle;
+					width: 24px;
+					height: 24px;
+					margin-right: 4px;
+					margin-top: -3px;
+				}
+			}
+			&.dropdown-header{
+				color: #fff;
+				background: @chosenColor;
+				font-weight: 500;
+				padding: 1px 14px;
+				line-height: 2em;
+				border-top: 1px solid  rgba(255,255,255,0.1);
+				border-bottom: 1px solid  rgba(0,0,0,0.1);
+				cursor: pointer;
+				& i{
+					vertical-align: text-bottom;
+					line-height: 1.8em;
+				}
+				&:hover{
+					background: fade(@chosenColor, 90%);
+				}
+			}
+			&.divider{
+				height: 0.7em;
+				background: fade(@gray-light, 20%);
+				border-top: 1px solid  rgba(255,255,255,0.1);
+			}
+		}
+		& .group{			
+			&.active{
+				padding-top: 5px;
+				padding-left: 5px;
+				.box-shadow(inset 5px 5px 0px @themeAccent);
+			}
+			& .groupLink{
+				cursor: pointer;
+				font-weight: 600;
+			}
+		}
+		& .sonar{
+			cursor: pointer;
+			&.new{
+				.box-shadow(inset 5px 0px 0px @brand-danger);
+				font-weight: 600;
+			}
+			&.active{
+				font-weight: 600;
+				.box-shadow(inset 5px 5px 0px @themeColor);
+				border-bottom: 0 solid transparent;
+			}
+			&.inactive{
+				.box-shadow(inset 5px 0px 0px rgba(0,0,0,0.2));
+				color: #aaa;
+				&.active{
+					.box-shadow(inset 5px 5px 0px rgba(0,0,0,0.2));
+				}
+				& + .tags{
+					.box-shadow(inset 5px 0px 0px rgba(0,0,0,0.2));
+				}
+			}
+		}
+		& .tags{
+			.box-shadow(inset 5px 0px 0px @themeColor);
+			& li{
+				padding-bottom: 3px;
+				& .tagLink{
+					padding: 3px 1px 0px 1px;
+					margin-left: 5px;
+					border: none;
+					.text-overflow();
+					cursor: pointer;
+				}
+				& .networks{
+					padding: 0;
+					margin-left: 5px;
+					& a{
+						margin: 3px;
+					}
+				}
+				& .fa{
+					margin: 3px;
+				}
+				&.tag{
+					&:hover{
+						background: rgba(0,0,0,0.05);
+					}
+				}
+				&.active{
+					background: rgba(0,0,0,0.05);
+				}
+			}
+		}
+		& .options{
+			padding: 3px 5px 3px 10px;
+		}
+	}
+}
+.slide-right{
+	position: relative;
+	.backface-visibility(hidden);
+	.transition(left 0.1s ease-in-out);
+	left: 0;
+	width: auto;
+	&.open{
+		left: 80%;
+		& .closeSlide{
+			position: fixed;
+			height: 100%;
+			width: 100%;
+			top: @navbar-height;
+			left: 80%;
+			z-index: 3000;
+		}
+	}
+}
+
+//CONTENT HEADER
+.contentHeader{
+	margin: 0.5em 0;
+	font-size: 1.6em;
+	& .input-group{
+		& .input-group-addon{
+			font-size: 1em;
+			border-radius: 0;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
+			background: none;
+			padding: 0;
+		}
+		& .form-control{
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
+			border-radius: 0;
+			.box-shadow(none);
+			background: none;
+			height: auto;
+			font-size: 1em;
+		}
+	}
+	& .btn-group{
+		margin: 0.1em 0 0.5em 0;
+		& .btn{
+			font-weight: 600;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	& .toolbar{
+		background: rgba(0,0,0,0.05);
+		border-top: 1px solid rgba(0,0,0,0.05);
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+		padding-top: 0.2em;
+	}
+	& .toolbarLabel{
+		font-size: 0.5em;
+		color: @gray-light;
+		text-transform: uppercase;
+	}
+}
+
+//CONTENT LISTING
+.contentListing{
+	& .dateHeader{
+		background: #484848;
+		color: #fff;
+		line-height: 2em;
+		padding: 0 1em;
+		letter-spacing: 2px;
+		font-weight: 600;
+		font-size: 0.9em;
+	}
+	& .postList{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		& li{
+			padding: 0.5em;
+			
+			&:nth-child(odd){
+				background: rgba(0,0,0,0.1);
+			}
+		}
+	}
+}
+
+@import "mediaqueries.less";

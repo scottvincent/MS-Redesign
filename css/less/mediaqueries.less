@@ -1,0 +1,83 @@
+// Media Queries
+//Default Style apply to Mobile First
+//-------------------------------------------------------All Sizes Touch Screens
+html.touch{
+	.slide-left, .slide-right{
+        .transition(left 0 linear);
+    }
+}
+//-------------------------------------------------------Minimum Size and Up Changes
+@media (min-width: @screen-sm) {
+	.slide-left{
+		width: @navWidth;
+	}
+}
+@media (min-width: @screen-md) {
+    body{
+        padding-top: 0;
+    }
+    .navbar-brand {
+		height: auto;
+		margin: 0;
+		width: auto;
+		text-align: left;
+	}
+    .closeSlide{
+        top: 0;
+    }
+}
+@media (min-width: @screen-lg) {
+    
+}
+
+//------------------------------------------------------------Specific Size Only
+@media (max-width: @screen-xs-max) {
+    .networks{
+        & img{
+            width: 24px;
+        }
+    }
+}
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+    .slide-left{
+        left: -@navWidth;
+    }
+    .slide-right{
+        &.open{
+            left: @navWidth;
+            & .closeSlide{
+                left: @navWidth;
+            }
+        }
+    }
+}
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+    .slide-left{
+        left: 0;
+    }
+    .slide-right{
+    	left: 0;
+    	margin-left: @navWidth;
+        &.open{
+            left: 0;
+            & .closeSlide{
+                display: none;
+            }
+        }
+    }
+}
+@media (min-width: @screen-lg) {
+    .slide-left{
+        left: 0;
+    }
+    .slide-right{
+    	left: 0;
+    	margin-left: @navWidth;
+        &.open{
+            left: 0;
+            & .closeSlide{
+                display: none;
+            }
+        }
+    }
+}
