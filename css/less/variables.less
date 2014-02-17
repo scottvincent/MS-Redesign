@@ -4,8 +4,8 @@
 //== Custom
 @chosenColor: #142850;
 
-@themeColor: #d69c1a;//contrast(@chosenColor, @chosenColor, hsl(hue(@chosenColor), saturation(@chosenColor), 43%), 43%);
-@themeAccent: #142850;//contrast(spin(@themeColor, 180), spin(@themeColor, 180), hsl(hue(spin(@themeColor, 180)), saturation(@themeColor), 43%), 43%);  
+@themeColor: contrast(@chosenColor, @chosenColor, hsl(hue(@chosenColor), saturation(@chosenColor), 43%), 43%);
+@themeAccent: #d69c1a;//contrast(spin(@themeColor, 180), spin(@themeColor, 180), hsl(hue(spin(@themeColor, 180)), saturation(@themeColor), 43%), 43%);  
 @themeText: #fff;
 @themeDesaturate: desaturate(@themeColor, 0%);
 
@@ -26,7 +26,7 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #428bca;
+@brand-primary:         @themeColor;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;

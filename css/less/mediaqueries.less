@@ -13,12 +13,18 @@ html.touch{
 	}
 }
 @media (min-width: @screen-md) {
+    body{
+        padding-top: 0;
+    }
     .navbar-brand {
 		height: auto;
 		margin: 0;
 		width: auto;
 		text-align: left;
 	}
+    .closeSlide{
+        top: 0;
+    }
 }
 @media (min-width: @screen-lg) {
     
@@ -26,7 +32,11 @@ html.touch{
 
 //------------------------------------------------------------Specific Size Only
 @media (max-width: @screen-xs-max) {
-
+    .networks{
+        & img{
+            width: 24px;
+        }
+    }
 }
 @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
     .slide-left{
