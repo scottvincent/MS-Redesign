@@ -2480,10 +2480,10 @@
               <div class="col-sm-2">
                 <div class="toolbarLabel">Listing View</div>
                 <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default active btn-primary" data-toggle="tooltip" data-placement="bottom" title="Tile View">
+                  <label class="btn btn-default active btn-primary" data-toggle="tooltip" data-placement="top" title="Tile View">
                     <input type="radio" name="view"><i class="fa fa-th-list"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Map View">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Map View">
                     <input type="radio" name="view"><i class="fa fa-location-arrow"></i>
                   </label>
                 </div> 
@@ -2491,16 +2491,16 @@
               <div class="col-lg-3 col-sm-4">
                 <div class="toolbarLabel">Post Type</div>
                 <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="bottom" title="All Post Types">
+                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="All Post Types">
                     <input type="radio" name="type">ALL
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Text">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Text">
                     <input type="radio" name="type"><i class="fa fa-font"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Photo">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Photo">
                     <input type="radio" name="type"><i class="fa fa-picture-o"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Video">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Video">
                     <input type="radio" name="type"><i class="fa fa-video-camera"></i>
                   </label>
                 </div> 
@@ -2508,24 +2508,24 @@
               <div class="col-lg-4 col-sm-5">
                 <div class="toolbarLabel">Filter Results</div>
                 <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="bottom" title="No Filters">
+                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="No Filters">
                     <input type="radio" name="filter">NONE
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Saved By Me">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Saved By Me">
                     <input type="radio" name="filter"><i class="fa fa-save"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Commented By Me">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Commented By Me">
                     <input type="radio" name="filter"><i class="fa fa-comment"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Not Verified">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Not Verified">
                     <input type="radio" name="filter">
                     <i class="fa fa-ban"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Verified (Not Cleared)">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified (Not Cleared)">
                     <input type="radio" name="filter">
                     <i class="fa fa-question-circle"></i>
                   </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Verified (Cleared)">
+                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified (Cleared)">
                     <input type="radio" name="filter">
                     <i class="fa fa-check-circle"></i>
                   </label>
@@ -2608,7 +2608,9 @@
 
       //Changes Color of Active Toolbar Button Group
       $('.toolbar .btn-group .btn').click(function () {
-        $(this).toggleClass('btn-primary').siblings('.btn').removeClass('btn-primary');
+        if(!$(this).hasClass('btn-primary')){
+          $(this).toggleClass('btn-primary').siblings('.btn').removeClass('btn-primary');
+        }
       });
 
 
