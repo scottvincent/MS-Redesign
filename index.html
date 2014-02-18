@@ -34,7 +34,7 @@
   </head>
   <body>
     <div class="slide-left navbar-default">
-      <a class="navbar-brand hidden-sm hidden-xs" href="#"><img alt="Media Sonar" src="img/logo.svg" width="170" height="19" /></a>
+      <a class="navbar-brand hidden-sm hidden-xs" href="#"><img alt="Media Sonar" src="img/logo.svg" width="174" height="19" /></a>
       <ul class="nav">
         <li class="userHeader"><img width="24" height="24" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/t5/186629_290603557_237834924_s.jpg" /> scottvincent</li>
         <li><a href="#"><i class="fa fa-floppy-o fa-fw fa-lg"></i>All Saved Posts</a></li>
@@ -2449,7 +2449,7 @@
           <a href="" class="menuToggle navbar-link pull-left hidden-lg hidden-md">
             <i class="fa fa-bars fa-fw fa-2x"></i>
           </a>
-          <a class="navbar-brand" href="#"><img alt="Media Sonar" src="img/logo.svg" width="170" height="19" /></a>
+          <a class="navbar-brand" href="#"><img alt="Media Sonar" src="img/logo.svg" width="174" height="19" /></a>
       </div>
 
 <!-- Content Header -->
@@ -2627,8 +2627,14 @@
       });
 
       $('.sonar').click(function () {
-        $('.sonar').removeClass('active');
-        $(this).addClass('active');        
+
+        if($(this).hasClass('active')){
+          $('.sonar').removeClass('active');
+          $(this).removeClass('active');     
+        }else{
+          $('.sonar').removeClass('active');
+          $(this).addClass('active');    
+        }
       });
       
       $('.tag .tagLink').click(function () {
