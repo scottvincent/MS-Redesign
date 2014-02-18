@@ -45,11 +45,24 @@ body{
 	&.open{
 		left: 0;
 	}
+	& .panel-group{
+	    margin: 0;
+	}
+	& .panel{
+	    margin: 0 !important;
+	    padding: 0;
+	    .box-shadow(none);
+	    border: none;
+	    background: transparent;
+	    border-radius: 0;
+	}
 	& .nav{
 		& li{
-			& a{
+			& > a{
 				border-top: 1px solid  rgba(255,255,255,0.1);
 				border-bottom: 1px solid  rgba(0,0,0,0.1);
+				padding-top: 7px;
+	    		padding-bottom: 7px;
 			}
 			&.userHeader{
 				padding: 0 14px;
@@ -91,33 +104,32 @@ body{
 				border-top: 1px solid  rgba(255,255,255,0.1);
 			}
 		}
-		& .group{			
+		& .group{	
+		    background: rgba(0,0,0,0.05);
 			&.active{
-				padding-top: 5px;
-				padding-left: 5px;
-				.box-shadow(inset 5px 5px 0px @themeAccent);
+	
 			}
 			& .groupLink{
 				cursor: pointer;
 				font-weight: 600;
+				color: @gray;	
 			}
 		}
 		& .sonar{
 			cursor: pointer;
 			&.new{
 				.box-shadow(inset 5px 0px 0px @brand-danger);
-				font-weight: 600;
 			}
 			&.active{
 				font-weight: 600;
-				.box-shadow(inset 5px 5px 0px @themeColor);
+				.box-shadow(inset 5px 0px 0px @themeColor);
 				border-bottom: 0 solid transparent;
 			}
 			&.inactive{
 				.box-shadow(inset 5px 0px 0px rgba(0,0,0,0.2));
 				color: #aaa;
 				&.active{
-					.box-shadow(inset 5px 5px 0px rgba(0,0,0,0.2));
+					.box-shadow(inset 5px 0px 0px rgba(0,0,0,0.2));
 				}
 				& + .tags{
 					.box-shadow(inset 5px 0px 0px rgba(0,0,0,0.2));
@@ -205,7 +217,7 @@ body{
 		}
 	}
 	& .btn-group{
-		margin: 0.1em 0 0.5em 0;
+		margin: 0.1em 0 0.4em 0;
 		& .btn{
 			font-weight: 600;
 			padding-left: 0;

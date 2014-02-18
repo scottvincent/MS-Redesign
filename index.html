@@ -42,11 +42,11 @@
         <li class="dropdown-header" data-toggle="collapse" data-target="#mySonars">MY SONARS<i class="fa fa-play fa-rotate-90 pull-right"></i></li>
 
         <li>
-          <ul id="mySonars" class="nav collapse in">
+          <ul id="mySonars" class="panel-group nav collapse in">
             <li><a href="#">View All Sonars</a></li>
             <li><a href="#"><i class="fa fa-plus fa-fw fa-lg"></i> Add Sonar</a></li>
-            <li>
-              <a class="sonar" data-toggle="collapse" data-target="#item1" >Las Vegas, NV, USA</a>
+            <li class="panel">
+              <a class="sonar" data-toggle="collapse" data-parent="#mySonars" data-target="#item1" >Las Vegas, NV, USA</a>
               <ul id="item1" class="nav tags collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
@@ -176,8 +176,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a class="sonar new " data-toggle="collapse" data-target="#item2" >Norfolk - Gentleman of the Road</a>
+            <li class="panel">
+              <a class="sonar new " data-toggle="collapse" data-target="#item2" data-parent="#mySonars">Norfolk - Gentleman of the Road</a>
               <ul id="item2" class="nav tags collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
@@ -295,8 +295,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a class="sonar new" data-toggle="collapse" data-target="#item3" >Washington Navy Yard Shooting</a>
+            <li class="panel">
+              <a class="sonar new" data-toggle="collapse" data-target="#item3" data-parent="#mySonars">Washington Navy Yard Shooting</a>
               <ul id="item3" class="nav tags collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
@@ -426,8 +426,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a class="sonar inactive" data-toggle="collapse" data-target="#item4" >Top Gear Test Track</a>
+            <li class="panel">
+              <a class="sonar inactive" data-toggle="collapse" data-target="#item4" data-parent="#mySonars">Top Gear Test Track</a>
               <ul id="item4" class="nav tags collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
@@ -545,17 +545,17 @@
                 </li>
               </ul>
             </li>
-            <li class="group">
-              <a class="groupLink" data-toggle="collapse" data-target="#group1" ><i class="fa fa-folder-open-o fa-fw fa-lg"></i> Group Name</a>
-              <ul id="group1" class="nav  collapse">
+            <li class="group panel">
+              <a class="groupLink" data-toggle="collapse" data-target="#group1" data-parent="#mySonars"><i class="fa fa-folder-open-o fa-fw fa-lg"></i> Group Name</a>
+              <ul id="group1" class="nav panel-group collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
                     <a href="#" class="btn btn-primary"><i class="fa fa-pencil fa-lg"></i> Edit</a> 
                     <a href="#" class="btn btn-danger"><i class="fa fa-times fa-lg"></i> Delete</a>
                   </div>
                 </li>
-                <li>
-                  <a class="sonar" data-toggle="collapse" data-target="#item5" >Sonar 5</a>
+                <li class="panel">
+                  <a class="sonar" data-toggle="collapse" data-parent="#group1" data-target="#item5" >Sonar 5</a>
                   <ul id="item5" class="nav tags collapse">
                     <li class="options">
                       <div class="btn-group btn-group-justified btn-group-xs">
@@ -685,8 +685,8 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a class="sonar" data-toggle="collapse" data-target="#item6" >Sonar 6</a>
+                <li class="panel">
+                  <a class="sonar" data-toggle="collapse" data-parent="#group1" data-target="#item6" >Sonar 6</a>
                   <ul id="item6" class="nav tags collapse">
                     <li class="options">
                       <div class="btn-group btn-group-justified btn-group-xs">
@@ -816,8 +816,8 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a class="sonar" data-toggle="collapse" data-target="#item7" >Sonar 7</a>
+                <li class="panel">
+                  <a class="sonar" data-toggle="collapse" data-parent="#group1" data-target="#item7" >Sonar 7</a>
                   <ul id="item7" class="nav tags collapse">
                     <li class="options">
                       <div class="btn-group btn-group-justified btn-group-xs">
@@ -949,17 +949,17 @@
                 </li>
               </ul>
             </li>
-             <li class="group">
-              <a class="groupLink" data-toggle="collapse" data-target="#group2" ><i class="fa fa-folder-open-o fa-fw fa-lg"></i> Group Name 2</a>
-              <ul id="group2" class="nav  collapse">
+             <li class="group panel">
+              <a class="groupLink" data-toggle="collapse" data-target="#group2" data-parent="#mySonars"><i class="fa fa-folder-open-o fa-fw fa-lg"></i> Group Name 2</a>
+              <ul id="group2" class="nav panel-group collapse">
                 <li class="options">
                   <div class="btn-group btn-group-justified btn-group-xs">
                     <a href="#" class="btn btn-primary"><i class="fa fa-pencil fa-lg"></i> Edit</a> 
                     <a href="#" class="btn btn-danger"><i class="fa fa-times fa-lg"></i> Delete</a>
                   </div>
                 </li>
-                <li>
-                  <a class="sonar" data-toggle="collapse" data-target="#item8" >Sonar 8</a>
+                <li class="panel">
+                  <a class="sonar" data-toggle="collapse" data-parent="#group2" data-target="#item8" >Sonar 8</a>
                   <ul id="item8" class="nav tags collapse">
                     <li class="options">
                       <div class="btn-group btn-group-justified btn-group-xs">
@@ -1089,8 +1089,8 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a class="sonar" data-toggle="collapse" data-target="#item9" >Sonar 9</a>
+                <li class="panel">
+                  <a class="sonar" data-toggle="collapse" data-parent="#group2" data-target="#item9" >Sonar 9</a>
                   <ul id="item9" class="nav tags collapse">
                     <li class="options">
                       <div class="btn-group btn-group-justified btn-group-xs">
