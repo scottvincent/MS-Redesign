@@ -2,14 +2,17 @@
 
 // Populate Data from Google Spreadsheet
 function showInfo(data, tabletop) {
+  // Find all Unique groups and Add
   $.each( tabletop.sheets("Sonars").all(), function(i, sonars) {
     var groupID = "#group" + sonars.group;
     if(sonars.group){
       var content = "<li class='group panel'>";
       if(!sonars.shared){
-        content+= "<a class='groupLink' data-toggle='collapse' data-target='"+ groupID +"' data-parent='#mySonars'><i class='fa fa-folder-open-o fa-fw fa-lg'></i> " + sonars.group + "</a>";
+        content+= "<a class='groupLink' data-toggle='collapse' data-target='"+ groupID +"' data-parent='#mySonars'><i class='fa fa-folder-open-o fa-fw fa-lg'></i> " + sonars.group;
+        content+= "</a>";
       }else{
-        content+= "<a class='groupLink' data-toggle='collapse' data-target='"+ groupID +"' data-parent='#sharedSonars'><i class='fa fa-folder-open-o fa-fw fa-lg'></i> " + sonars.group + "</a>";
+        content+= "<a class='groupLink' data-toggle='collapse' data-target='"+ groupID +"' data-parent='#sharedSonars'><i class='fa fa-folder-open-o fa-fw fa-lg'></i> " + sonars.group;
+        content+= "</a>";
       }
       content+= "<ul id='group"+ sonars.group + "' class='nav panel-group collapse'>";
       if(!sonars.shared){
@@ -90,7 +93,16 @@ function showInfo(data, tabletop) {
       $(content).appendTo(groupID); 
     }
   })
+  
+  // Add Sonar Count on Menus
+  $(".groupLink").each(function() {
+    var n = $(this).siblings().children('.panel').length;
+    var content2 = "<div class='badge pull-right'>" + n + "</div>";
+    $(content2).appendTo(this); 
+  }); 
 }
+
+
 // Google Spreadsheet
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AvU6y0DvNPHtdHVRMHBwMGREbUxkYURqM3B5dmo5MHc&output=html';
 

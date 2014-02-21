@@ -117,6 +117,7 @@ body{
 				font-weight: 600;
 				color: @gray;	
 				padding-left: 5px;
+				padding-right: 5px;
 			}
 		}
 		& .sonar{
@@ -232,12 +233,25 @@ body{
 		background: rgba(0,0,0,0.05);
 		border-top: 1px solid rgba(0,0,0,0.05);
 		border-bottom: 1px solid rgba(0,0,0,0.05);
-		padding-top: 0.2em;
+		padding: 0.2em 0;
 	}
 	& .toolbarLabel{
 		font-size: 0.5em;
 		color: @gray-light;
 		text-transform: uppercase;
+	}
+	& .toolbarToggle{
+	    padding: 0 0.3em 0 0.7em;
+        font-size: 0.7em;
+        line-height: 1em;
+        color: rgba(0,0,0,0.3);
+        cursor: pointer;
+        &:hover{
+            color: rgba(0,0,0,0.5);
+        }
+	}
+	& #condensedToolbar{
+	    cursor: pointer;
 	}
 }
 

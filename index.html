@@ -9,7 +9,7 @@
 
 <!-- Mobile Settings -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, width=device-width" />
-    <meta name="apple-mobile-web-app-title" content="Starting Point">
+    <meta name="apple-mobile-web-app-title" content="MS Redesign">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-TileImage" content="ico/apple-touch-icon-144-precomposed.png"/>
     <meta name="msapplication-TileColor" content="#000"/>
@@ -43,18 +43,10 @@
         <li><a href="#"><i class="fa fa-plus fa-fw fa-lg"></i>Add Sonar</a></li>
         <li class="dropdown-header" data-toggle="collapse" data-target="#mySonars">MY SONARS<i class="fa fa-play fa-rotate-90 pull-right"></i></li>
 
-        <li>
-          <ul id="mySonars" class="panel-group nav collapse in">
-            
-          </ul>
-        </li>
+        <li><ul id="mySonars" class="panel-group nav collapse in"></ul></li>
 
         <li class="dropdown-header" data-toggle="collapse" data-target="#sharedSonars">SHARED SONARS<i class="fa fa-play fa-rotate-180 pull-right"></i></li>
-        <li>
-          <ul id="sharedSonars" class="nav collapse">
-            
-          </ul>
-        </li>
+        <li><ul id="sharedSonars" class="nav collapse"></ul></li>
         <li class="dropdown-header" data-toggle="collapse" data-target="#helpMenu">HELP<i class="fa fa-play fa-rotate-180 pull-right"></i></li>
         <li>
           <ul id="helpMenu" class="nav collapse">
@@ -105,59 +97,69 @@
               </div>
             </div>
             <div class="row toolbar" role="toolbar">
-              <div class="col-sm-2">
-                <div class="toolbarLabel">Listing View</div>
-                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default active btn-primary" data-toggle="tooltip" data-placement="top" title="Tile View">
-                    <input type="radio" name="view"><i class="fa fa-th-list"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Map View">
-                    <input type="radio" name="view"><i class="fa fa-location-arrow"></i>
-                  </label>
-                </div> 
+
+              <div id="condensedToolbar">
+                <div class="toolbarToggle pull-left" data-toggle="tooltip" data-placement="top" title="Show Options"><i class="fa fa-play" ></i></div>
+                <div class="toolbarLabel col-sm-11">
+                  Listing View &nbsp; <a id="currentView">List View</a> &nbsp;&nbsp;|&nbsp; Post Type &nbsp; <a id="currentType">Choose...</a> &nbsp;&nbsp;|&nbsp; Filter Results &nbsp; <a id="currentFilter">Choose...</a> 
+                </div>
               </div>
-              <div class="col-lg-3 col-sm-4">
-                <div class="toolbarLabel">Post Type</div>
-                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="All Post Types">
-                    <input type="radio" name="type">ALL
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Text">
-                    <input type="radio" name="type"><i class="fa fa-font"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Photo">
-                    <input type="radio" name="type"><i class="fa fa-picture-o"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Video">
-                    <input type="radio" name="type"><i class="fa fa-video-camera"></i>
-                  </label>
-                </div> 
-              </div>
-              <div class="col-lg-4 col-sm-5">
-                <div class="toolbarLabel">Filter Results</div>
-                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                  <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="No Filters">
-                    <input type="radio" name="filter">NONE
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Saved By Me">
-                    <input type="radio" name="filter"><i class="fa fa-save"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Commented By Me">
-                    <input type="radio" name="filter"><i class="fa fa-comment"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Not Verified">
-                    <input type="radio" name="filter">
-                    <i class="fa fa-ban"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified (Not Cleared)">
-                    <input type="radio" name="filter">
-                    <i class="fa fa-question-circle"></i>
-                  </label>
-                  <label class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Verified (Cleared)">
-                    <input type="radio" name="filter">
-                    <i class="fa fa-check-circle"></i>
-                  </label>
-                </div> 
+              <div id="expandedToolbar" style="display:none;">
+                <div class="toolbarToggle pull-left" data-toggle="tooltip" data-placement="top" title="Hide Options"><i class="fa fa-play fa-rotate-90"></i></div>
+                <div class="col-sm-2">
+                  <div class="toolbarLabel">Listing View</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default active btn-primary" id="chooseList" data-toggle="tooltip" data-placement="top" title="Tile View">
+                      <input type="radio" name="view"><i class="fa fa-th-list"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseMap" data-placement="top" title="Map View">
+                      <input type="radio" name="view"><i class="fa fa-location-arrow"></i>
+                    </label>
+                  </div> 
+                </div>
+                <div class="col-lg-3 col-sm-4">
+                  <div class="toolbarLabel">Post Type</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="All Post Types">
+                      <input type="radio" name="type">ALL
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseText" data-placement="top" title="Text">
+                      <input type="radio" name="type"><i class="fa fa-font"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="choosePhoto" data-placement="top" title="Photo">
+                      <input type="radio" name="type"><i class="fa fa-picture-o"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseVideo" data-placement="top" title="Video">
+                      <input type="radio" name="type"><i class="fa fa-video-camera"></i>
+                    </label>
+                  </div> 
+                </div>
+                <div class="col-lg-4 col-sm-5">
+                  <div class="toolbarLabel">Filter Results</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="No Filters">
+                      <input type="radio" name="filter">NONE
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseSaved" data-placement="top" title="Saved By Me">
+                      <input type="radio" name="filter"><i class="fa fa-save"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseComments" data-placement="top" title="Commented By Me">
+                      <input type="radio" name="filter"><i class="fa fa-comment"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseNot" data-placement="top" title="Not Verified">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-ban"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseVerified" data-placement="top" title="Verified (Not Cleared)">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-question-circle"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseCleared" data-placement="top" title="Verified (Cleared)">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-check-circle"></i>
+                    </label>
+                  </div> 
+                </div>
               </div>
             </div>
           </div>
@@ -209,72 +211,6 @@
     <script type="text/javascript" src="js/tabletop.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
 
-    <script>
-      $(function () {
-          //Initialize Popovers
-          $('body').popover({
-              selector: '[data-toggle="popover"]'
-          });
-
-          //Initialize Tooltips
-          $('body').tooltip({
-              selector: 'a[rel="tooltip"], [data-toggle="tooltip"]',
-              container: 'body'
-          });
-      });
-      $( window ).load(function()  {
-        //Toggle Slide Out Menu
-        $('.menuToggle, .closeSlide').click(function () {
-          $(".slide-right").toggleClass('open');
-          $(".slide-left").toggleClass('open');
-          return false;
-        });
-
-        //Changes Direction of Menu Collapse Button Icon
-        $('[data-toggle="collapse"]').click(function () {
-          $(this).children('.fa-play').toggleClass('fa-rotate-90');
-          $(this).children('.fa-play').toggleClass('fa-rotate-180');
-        });
-
-        //Changes Color of Active Toolbar Button Group
-        $('.toolbar .btn-group .btn').click(function () {
-          if(!$(this).hasClass('btn-primary')){
-            $(this).toggleClass('btn-primary').siblings('.btn').removeClass('btn-primary');
-          }
-        });
-
-
-        $('.tag').click(function () {
-          $(this).toggleClass('active').siblings('.tag').removeClass('active');
-        });
-
-        $('.groupLink').click(function () {
-          if($(this).siblings().hasClass('in')){
-            $(this).parent().removeClass('active');
-          }else{
-            $(this).parent().addClass('active');
-          }
-        });
-        $('.sonar').click(function () {
-          $('.sonar').collapse({toggle: false});
-          if($(this).hasClass('active')){
-            $('.sonar').removeClass('active');
-            $(this).removeClass('active');     
-          }else{
-            $('.sonar').removeClass('active');
-            $(this).addClass('active');    
-          }
-        });
-
-        $('.tag .tagLink').click(function () {
-          $('.networks').collapse({toggle: false});
-          if($('.networks').hasClass('in')){
-            $('.networks').collapse('hide');
-          }
-        });
-      });
-
-    </script>
 
   </body>
 </html>
