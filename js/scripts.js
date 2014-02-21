@@ -21,7 +21,7 @@ $(function () {
     });
 
     //Initialize Tooltips
-    $('body').tooltip({
+    $('html.no-touch body').tooltip({
       selector: 'a[rel="tooltip"], [data-toggle="tooltip"]',
       container: 'body'
     });
