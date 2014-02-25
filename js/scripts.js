@@ -25,6 +25,15 @@ $(function () {
       selector: 'a[rel="tooltip"], [data-toggle="tooltip"]',
       container: 'body'
     });
+
+    //Initialize Datepicker
+    $('#timeline').datepicker({
+      todayBtn: "linked",
+      orientation: "auto right",
+      todayHighlight: true,
+      format: "M. d, 'yy",
+      autoclose: true
+    });
   });
 $( window ).load(function()  {
     //Toggle Slide Out Menu
@@ -47,7 +56,6 @@ $( window ).load(function()  {
       }
     });
 
-
     $('.tag').click(function () {
       $(this).toggleClass('active').siblings('.tag').removeClass('active');
     });
@@ -59,14 +67,16 @@ $( window ).load(function()  {
         $(this).parent().addClass('active');
       }
     });
+
     $('.sonar').click(function () {
       $('.sonar').collapse({toggle: false});
       if($(this).hasClass('active')){
         $('.sonar').removeClass('active');
-        $(this).removeClass('active');     
+        $(this).removeClass('active');   
       }else{
         $('.sonar').removeClass('active');
-        $(this).addClass('active');    
+        $(this).addClass('active');  
+        $(this).removeClass('new');    
       }
     });
 

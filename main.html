@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+<!-- Website Information -->
+    <title>Media Sonar Redesign</title>
+    <meta name="description" content="">
+    <meta name="author" content="Scott Vincent http://scottvincent.ca">
+    <meta name="keywords" content="">
+
+<!-- Mobile Settings -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, width=device-width" />
+    <meta name="apple-mobile-web-app-title" content="MS Redesign">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileImage" content="ico/apple-touch-icon-144-precomposed.png"/>
+    <meta name="msapplication-TileColor" content="#000"/>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+<!-- fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="ico/favicon.ico">
+
+<!-- Styles -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"><!-- Font-awesome CDN Styles -->
+    <link href="css/styles.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="slide-left navbar-default">
+      <a class="navbar-brand hidden-sm hidden-xs" href="#"><img alt="Media Sonar" src="img/logo.svg" width="174" height="19" /></a>
+      <ul class="nav">
+        <li class="userHeader"><img width="24" height="24" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/t5/186629_290603557_237834924_s.jpg" /> scottvincent</li>
+        <li><a href="#"><i class="fa fa-floppy-o fa-fw fa-lg"></i>All Saved Posts</a></li>
+        <li><a href="#"><i class="fa fa-check-circle fa-fw fa-lg"></i>All Verified Posts</a></li>
+        <li><a href="#"><i class="fa fa-crosshairs fa-fw fa-lg"></i>All My Sonars</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="fa fa-plus fa-fw fa-lg"></i>Add Sonar</a></li>
+        <li class="dropdown-header" data-toggle="collapse" data-target="#mySonars">MY SONARS<i class="fa fa-play fa-rotate-90 pull-right"></i></li>
+
+        <li><ul id="mySonars" class="panel-group nav collapse in"></ul></li>
+
+        <li class="dropdown-header" data-toggle="collapse" data-target="#sharedSonars">SHARED SONARS<i class="fa fa-play fa-rotate-180 pull-right"></i></li>
+        <li><ul id="sharedSonars" class="nav collapse"></ul></li>
+        <li class="dropdown-header" data-toggle="collapse" data-target="#helpMenu">HELP<i class="fa fa-play fa-rotate-180 pull-right"></i></li>
+        <li>
+          <ul id="helpMenu" class="nav collapse">
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-sign-out fa-fw fa-lg"></i>Log Out</a></li>
+        <li class="divider"></li>
+      </ul>
+    </div>
+    <div class="slide-right">
+      <div class="closeSlide"></div>
+
+<!-- Collapsed Navbar --> 
+      <div class="navbar navbar-default navbar-fixed-top hidden-lg hidden-md">
+          <a href="" class="menuToggle navbar-link pull-left hidden-lg hidden-md">
+            <i class="fa fa-bars fa-fw fa-2x"></i>
+          </a>
+          <a class="navbar-brand" href="#"><img alt="Media Sonar" src="img/logo.svg" width="174" height="19" /></a>
+      </div>
+
+<!-- Content Header -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 contentHeader">
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <label class="sr-only" for="keywordInput">Search Keywords</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+                    <input type="text" class="form-control" id="keywordInput" placeholder="Search Keywords">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <label class="sr-only" for="locationInput">Search Location</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-location-arrow fa-fw"></i></span>
+                    <input type="text" class="form-control" id="locationInput" placeholder="Search Location">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="sr-only" for="timeline">Set Date</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-clock-o fa-fw"></i></span>
+                    <input id="timeline" type="text" type="text" class="form-control" placeholder="Today">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row toolbar" role="toolbar">
+
+              <div id="condensedToolbar">
+                <div class="toolbarToggle col-xs-1 text-center" data-toggle="tooltip" data-placement="top" title="Show Options"><i class="fa fa-play" ></i></div>
+                <div class="toolbarLabel col-xs-11">
+                  Listing View &nbsp; <a id="currentView">List View</a> &nbsp;&nbsp;|&nbsp;&nbsp; Post Type &nbsp; <a id="currentType">Choose...</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filter Results &nbsp; <a id="currentFilter">Choose...</a> 
+                </div>
+              </div>
+
+              <div id="expandedToolbar" style="display:none;">
+                <div class="toolbarToggle pull-left col-xs-1 text-center" data-toggle="tooltip" data-placement="top" title="Hide Options"><i class="fa fa-play fa-rotate-90"></i></div>
+                <div class="col-sm-2 col-xs-11 ">
+                  <div class="toolbarLabel">Listing View</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default active btn-primary" id="chooseList" data-toggle="tooltip" data-placement="top" title="Tile View">
+                      <input type="radio" name="view"><i class="fa fa-th-list"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseMap" data-placement="top" title="Map View">
+                      <input type="radio" name="view"><i class="fa fa-location-arrow"></i>
+                    </label>
+                  </div> 
+                </div>
+                <div class="col-lg-3 col-sm-4 col-xs-11 col-xs-offset-1 col-sm-offset-0">
+                  <div class="toolbarLabel">Post Type</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="All Post Types">
+                      <input type="radio" name="type">ALL
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseText" data-placement="top" title="Text">
+                      <input type="radio" name="type"><i class="fa fa-font"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="choosePhoto" data-placement="top" title="Photo">
+                      <input type="radio" name="type"><i class="fa fa-picture-o"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseVideo" data-placement="top" title="Video">
+                      <input type="radio" name="type"><i class="fa fa-video-camera"></i>
+                    </label>
+                  </div> 
+                </div>
+                <div class="col-lg-4 col-sm-5 col-xs-11 col-xs-offset-1 col-sm-offset-0">
+                  <div class="toolbarLabel">Filter Results</div>
+                  <div class="btn-group btn-group-justified" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active btn-primary" data-toggle="tooltip" data-placement="top" title="No Filters">
+                      <input type="radio" name="filter">NONE
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseSaved" data-placement="top" title="Saved By Me">
+                      <input type="radio" name="filter"><i class="fa fa-save"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseComments" data-placement="top" title="Commented By Me">
+                      <input type="radio" name="filter"><i class="fa fa-comment"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseNot" data-placement="top" title="Not Verified">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-ban"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseVerified" data-placement="top" title="Verified (Not Cleared)">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-question-circle"></i>
+                    </label>
+                    <label class="btn btn-default" data-toggle="tooltip" id="chooseCleared" data-placement="top" title="Verified (Cleared)">
+                      <input type="radio" name="filter">
+                      <i class="fa fa-check-circle"></i>
+                    </label>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 contentListing hide">
+            <div class="dateHeader">February 16th 2014</div>
+            <ul class="postList">
+              <li class="tile-98522977">
+                <div class="itemmedia">
+                  <div class="itemtile-actions-verified-normal itemtile-actions-button" onclick="openItemVerifyForm(98522977);"></div>
+                  <div class="itemmedia-map-98522977"></div>
+                  <div class="itemmedia-item-98522977">
+                    <img src="https://pbs.twimg.com/media/BgoGQnlIUAAka2S.jpg:small" />
+                  </div>
+                  <div class="itemtile-actions-98522977 itemtile-actions">
+                    <div class="itemtile-actions-dislike-normal itemtile-actions-button"></div>
+                    <div class="itemtile-actions-like-normal itemtile-actions-button"></div>
+                    <div class="itemtile-actions-pushpin-normal itemtile-actions-button"></div>
+                    <div class="itemtile-actions-status itemtile-actions-button"></div>
+                  </div>
+                </div>
+                <div class="itemtile-details">
+                  <div class="item-title">Fire happened around 3:30 AM. For more info stay tune to @<a target="_blank" href="http://app.mediasonar.co/#{&quot;keyword&quot;:&quot;@TWCNewsSTier&quot;}">TWCNewsSTier</a> http://t.co/aCrRsoc7xR</div>
+                  <div class="item-sourceuser">
+                    <div class="icon-twitter"></div> <a target="_blank" href="http://app.mediasonar.co/#{&quot;keyword&quot;:&quot;@AlexaGreenNews&quot;}">@AlexaGreenNews</a>
+                  </div>
+                  <div class="item-agecount">1 hour ago</div>
+                  <div class="item-translate">Translate</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- END OF SLIDE-RIGHT -->
+<!-- Scripts -->
+    
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/modernizr/2.6.3/modernizr.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+
+    <!-- Optionally enable responsive features in IE8 -->
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/svgeezy.min.js"></script>
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+
+
+  </body>
+</html>

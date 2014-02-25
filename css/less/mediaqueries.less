@@ -11,6 +11,15 @@ html.touch{
 	.slide-left{
 		width: @navWidth;
 	}
+	.toolbarToggle{
+	    width: auto;
+	}
+	#timeline {
+        font-size: 0.6em;
+        height: 3.35em;
+        font-weight: 600;
+        padding: 0;
+    }
 }
 @media (min-width: @screen-md) {
     body{
@@ -37,9 +46,12 @@ html.touch{
             width: 24px;
         }
     }
-    .toolbarToggle{
-        width: 100%;
-        display: block;
+    .contentHeader {
+        & .input-group {
+            & .form-control{
+                font-size: 0.7em;
+            }
+        }
     }
 }
 @media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
