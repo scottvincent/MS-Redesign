@@ -79,6 +79,15 @@ $( window ).load(function()  {
         $(this).removeClass('new');    
       }
     });
+    $('.sonarStatus').click(function () {
+      if($(this).hasClass('text-muted')){
+        $(this).closest('.tags').siblings('.sonar').removeClass('inactive');  
+        $(this).removeClass('text-muted'); 
+      }else{
+        $(this).closest('.tags').siblings('.sonar').addClass('inactive'); 
+        $(this).addClass('text-muted');    
+      }
+    });
 
     $('.tag .tagLink').click(function () {
       $('.networks').collapse({toggle: false});

@@ -53,9 +53,9 @@ function showInfo(data, tabletop) {
       if(!sonars.shared){
         content+= "<li class='options'><div class='btn-group btn-group-xs'>";
         if(sonars.status == "inactive"){
-          content+= "<a href='#' class='btn text-muted' data-toggle='tooltip' data-placement='bottom' title='Turn On'><i class='fa fa-power-off fa-lg'></i></a>";
+          content+= "<a href='#' class='btn text-muted sonarStatus' data-toggle='tooltip' data-placement='bottom' title='Turn On'><i class='fa fa-power-off fa-lg'></i></a>";
         }else{
-          content+= "<a href='#' class='btn' data-toggle='tooltip' data-placement='bottom' title='Turn Off'><i class='fa fa-power-off fa-lg'></i></a>";
+          content+= "<a href='#' class='btn sonarStatus' data-toggle='tooltip' data-placement='bottom' title='Turn Off'><i class='fa fa-power-off fa-lg'></i></a>";
         }
         content+= "<a href='#' class='btn' data-toggle='tooltip' data-placement='bottom' title='Edit'><i class='fa fa-pencil fa-lg'></i></a>";
         content+= "<a href='#' class='btn' data-toggle='tooltip' data-placement='bottom' title='Delete'><i class='fa fa-times fa-lg'></i></a>";

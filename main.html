@@ -41,7 +41,7 @@
         <li><a href="#"><i class="fa fa-check-circle fa-fw fa-lg"></i>All Verified Posts</a></li>
         <li><a href="#"><i class="fa fa-crosshairs fa-fw fa-lg"></i>All My Sonars</a></li>
         <li class="divider"></li>
-        <li><a href="#"><i class="fa fa-plus fa-fw fa-lg"></i>Add Sonar</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#addSonar"><i class="fa fa-plus fa-fw fa-lg"></i>Add Sonar</a></li>
         <li class="dropdown-header" data-toggle="collapse" data-target="#mySonars">MY SONARS<i class="fa fa-play fa-rotate-90 pull-right"></i></li>
 
         <li><ul id="mySonars" class="panel-group nav collapse in"></ul></li>
@@ -205,8 +205,26 @@
           </div>
         </div>
       </div>
-
     </div> <!-- END OF SLIDE-RIGHT -->
+
+<!--Modal-->
+      <div class="modal fade" id="addSonar">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title"><i class="fa fa-plus fa-fw fa-lg"></i>Add Sonar</h4>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Create New Sonar</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 <!-- Scripts -->
     
     <!-- JavaScript plugins (requires jQuery) -->
