@@ -35,7 +35,7 @@ $(function () {
       autoclose: true
     });
   //Remove 300ms click delay on touchscreens
-    //FastClick.attach(document.body);
+    FastClick.attach(document.body);
   });
 $( window ).load(function()  {
     //Toggle Slide Out Menu
