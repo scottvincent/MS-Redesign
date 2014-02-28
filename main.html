@@ -42,9 +42,10 @@
           zoom: 11,
           styles: [{"featureType":"all","stylers":[{"hue":"#142850"},{"saturation":-85},{"gamma":0.6}]},],
           panControl: false,
+          linksControl: false,
           mapTypeControl: true,
           mapTypeControlOptions: {
-              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
               position: google.maps.ControlPosition.LEFT_BOTTOM
           },
           zoomControlOptions: {
@@ -53,9 +54,20 @@
           streetViewControlOptions: {
               position: google.maps.ControlPosition.LEFT_BOTTOM
           },
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          panControlOptions: {
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+          },
+          addressControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM
+          },
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+         
         }
         var map = new google.maps.Map(map_canvas, map_options)
+        map.get('streetView')
+        .setOptions({panControlOptions:  map.get('panControlOptions'),
+                 zoomControlOptions: map.get('zoomControlOptions'),
+                 addressControlOptions: map.get('zoomControlOptions')});
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
