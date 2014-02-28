@@ -12,13 +12,11 @@
       );
     document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
   } 
-  //Remove 300ms click delay on touchscreens
-  window.addEventListener('load', function () {
-    FastClick.attach(document.body);
-  }, false);
-
 })();
-
+//Remove 300ms click delay on touchscreens
+$(function() {
+  FastClick.attach(document.body);
+});
 $(function () {
     //Initialize Popovers
     $('body').popover({
