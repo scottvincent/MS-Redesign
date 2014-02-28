@@ -30,12 +30,12 @@ $(function () {
     });
 
     //Initialize Datepicker
-    $('#timeline').datepicker({
-      todayBtn: "linked",
-      orientation: "auto right",
-      todayHighlight: true,
-      format: "M. d, 'yy",
-      autoclose: true
+  //  $('#timeline').datepicker({
+  //    todayBtn: "linked",
+  //    orientation: "auto right",
+  //    todayHighlight: true,
+  //    format: "M. d, 'yy",
+  //    autoclose: true
     });
   });
 $( window ).load(function()  {
