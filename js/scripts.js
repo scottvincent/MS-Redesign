@@ -29,14 +29,15 @@ $(function () {
       container: 'body'
     });
 
-    //Initialize Datepicker
-  //  $('#timeline').datepicker({
-  //    todayBtn: "linked",
-  //    orientation: "auto right",
-  //    todayHighlight: true,
-  //    format: "M. d, 'yy",
-  //    autoclose: true
+  //Initialize Datepicker
+    $('#timeline').datepicker({
+      todayBtn: "linked",
+      orientation: "auto right",
+      todayHighlight: true,
+      format: "M. d, 'yy",
+      autoclose: true
     });
+    
   });
 $( window ).load(function()  {
     //Toggle Slide Out Menu
