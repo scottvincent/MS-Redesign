@@ -13,10 +13,7 @@
     document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
   } 
 })();
-//Remove 300ms click delay on touchscreens
-$(function() {
-  FastClick.attach(document.body);
-});
+
 $(function () {
     //Initialize Popovers
     $('body').popover({
@@ -37,7 +34,8 @@ $(function () {
       format: "M. d, 'yy",
       autoclose: true
     });
-    
+  //Remove 300ms click delay on touchscreens
+    FastClick.attach(document.body);
   });
 $( window ).load(function()  {
     //Toggle Slide Out Menu
