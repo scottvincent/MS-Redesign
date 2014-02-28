@@ -148,13 +148,22 @@ $( window ).load(function()  {
       }
     });
   });
+
 $(document).ready(function(){
-   vph = $(window).height();
-  $('#map').css({'height': vph });
+  vph = $(window).height();
+  if($(window).width() >= 991){
+    $('#map').css({'height': vph });
+  }else{
+    $('#map').css({'height': vph - 50 });
+  }
 });
 
 $(window).resize(function() {
-   vph = $(window).height();
-  $('#map').css({'height': vph });
+  vph = $(window).height();
+  if($(window).width() >= 991){
+    $('#map').css({'height': vph });
+  }else{
+    $('#map').css({'height': vph - 50 });
+  }
 });
 
