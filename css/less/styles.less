@@ -210,6 +210,9 @@ body{
 .contentHeader{
 	margin: 0.5em 0;
 	font-size: 1.6em;
+	position: absolute;
+	background: rgba(255,255,255,0.9);
+	z-index: 1;
 	& .input-group{
 		& .input-group-addon{
 			font-size: 1em;
@@ -267,8 +270,20 @@ body{
         color: rgba(0,0,0,0.5);
     }
 }
+
+#map{
+    height: 100%;
+    width: 100%;
+    background: #f5f5f5;
+}
 //CONTENT LISTING
 .contentListing{
+    &.listView{
+        
+    }
+    &.mapView{
+    
+    }
 	& .dateHeader{
 		background: #484848;
 		color: #fff;

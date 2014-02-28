@@ -98,6 +98,17 @@ $( window ).load(function()  {
       }
     });
 
+    $('#chooseMap').click(function(){
+      $('#map').show();
+      $('.contentListing').hide();
+      $('.contentHeader').css({'position' : 'absolute'});
+    })
+    $('#chooseList').click(function(){
+      $('#map').hide();
+      $('.contentListing').show();
+      $('.contentHeader').css({'position' : 'relative'});
+    })
+
     $('#condensedToolbar').click(function () {
       $('#expandedToolbar').show();
       $('#condensedToolbar').hide();
@@ -135,7 +146,15 @@ $( window ).load(function()  {
       }else{
         $('#currentFilter').text('Choose...');
       }
-
-      
     });
   });
+$(document).ready(function(){
+   vph = $(window).height();
+  $('#map').css({'height': vph });
+});
+
+$(window).resize(function() {
+   vph = $(window).height();
+  $('#map').css({'height': vph });
+});
+
