@@ -61,13 +61,16 @@
             position: google.maps.ControlPosition.BOTTOM
           },
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-         
+          enableCloseButton: false         
         }
         var map = new google.maps.Map(map_canvas, map_options)
         map.get('streetView')
-        .setOptions({panControlOptions:  map.get('panControlOptions'),
-                 zoomControlOptions: map.get('zoomControlOptions'),
-                 addressControlOptions: map.get('addressControlOptions')});
+        .setOptions({
+          panControlOptions:  map.get('panControlOptions'),
+          zoomControlOptions: map.get('zoomControlOptions'),
+          enableCloseButton: map.get('enableCloseButton'),
+          addressControlOptions: map.get('addressControlOptions')
+        });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
@@ -195,9 +198,6 @@
                     <label class="btn btn-default" data-toggle="tooltip" id="chooseSaved" data-placement="top" title="Saved By Me">
                       <input type="radio" name="filter"><i class="fa fa-save"></i>
                     </label>
-                    <label class="btn btn-default" data-toggle="tooltip" id="chooseComments" data-placement="top" title="Commented By Me">
-                      <input type="radio" name="filter"><i class="fa fa-comment"></i>
-                    </label>
                     <label class="btn btn-default" data-toggle="tooltip" id="chooseNot" data-placement="top" title="Not Verified">
                       <input type="radio" name="filter">
                       <i class="fa fa-ban"></i>
@@ -221,28 +221,20 @@
           <div class="col-sm-12 contentListing" style="display: none;">
             <div class="dateHeader">February 16th 2014</div>
             <ul class="postList">
-              <li class="tile-98522977">
-                <div class="itemmedia">
-                  <div class="itemtile-actions-verified-normal itemtile-actions-button" onclick="openItemVerifyForm(98522977);"></div>
-                  <div class="itemmedia-map-98522977"></div>
-                  <div class="itemmedia-item-98522977">
-                    <img src="https://pbs.twimg.com/media/BgoGQnlIUAAka2S.jpg:small" />
-                  </div>
-                  <div class="itemtile-actions-98522977 itemtile-actions">
-                    <div class="itemtile-actions-dislike-normal itemtile-actions-button"></div>
-                    <div class="itemtile-actions-like-normal itemtile-actions-button"></div>
-                    <div class="itemtile-actions-pushpin-normal itemtile-actions-button"></div>
-                    <div class="itemtile-actions-status itemtile-actions-button"></div>
-                  </div>
+              <li>
+                <div class="postThumb">
+                  <img src="https://pbs.twimg.com/media/BgoGQnlIUAAka2S.jpg:small" />
                 </div>
-                <div class="itemtile-details">
-                  <div class="item-title">Fire happened around 3:30 AM. For more info stay tune to @<a target="_blank" href="http://app.mediasonar.co/#{&quot;keyword&quot;:&quot;@TWCNewsSTier&quot;}">TWCNewsSTier</a> http://t.co/aCrRsoc7xR</div>
-                  <div class="item-sourceuser">
-                    <div class="icon-twitter"></div> <a target="_blank" href="http://app.mediasonar.co/#{&quot;keyword&quot;:&quot;@AlexaGreenNews&quot;}">@AlexaGreenNews</a>
-                  </div>
-                  <div class="item-agecount">1 hour ago</div>
-                  <div class="item-translate">Translate</div>
+                <div class="postTitle">Fire happened around 3:30 AM. For more info stay tune to <a>@TWCNewsSTier</a> <a>http://t.co/aCrRsoc7xR</a></div>
+                <div class="postSourceUser">
+                  <img src="http://www.google.com/s2/favicons?domain=www.twitter.com"><a href="">@AlexaGreenNews</a>
                 </div>
+                <div class="postDate">1 hour ago</div>
+                <a href="">Verify</a>
+                <a href="">Source</a>
+                <a href="">Map</a>
+                <a href="">Save</a>
+                <a href="">Translate</a>
               </li>
             </ul>
           </div>

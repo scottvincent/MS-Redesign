@@ -135,8 +135,6 @@ $( window ).load(function()  {
 
       if($('#chooseSaved').hasClass('active')){
         $('#currentFilter').text('Saved By Me');
-      }else if($('#chooseComments').hasClass('active')){
-        $('#currentFilter').text('Commented By Me');
       }else if($('#chooseNot').hasClass('active')){
         $('#currentFilter').text('Not Verified');
       }else if($('#chooseVerified').hasClass('active')){
@@ -166,4 +164,6 @@ $(window).resize(function() {
     $('#map').css({'height': vph - 50 });
   }
 });
+
+
 
