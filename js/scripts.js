@@ -145,6 +145,23 @@ $( window ).load(function()  {
         $('#currentFilter').text('Choose...');
       }
     });
+
+    $('.postThumb').click(function () {
+      if($(this).hasClass('col-sm-1')){
+        $(this).addClass('col-sm-6');  
+        $(this).removeClass('col-sm-1'); 
+        $(this).siblings('.postText').addClass('col-sm-6');
+        $(this).siblings('.postText').removeClass('col-sm-11');
+        $(this).siblings('.postText').children('.postDescription').removeClass('hidden');
+      }else{
+        $(this).removeClass('col-sm-6');  
+        $(this).addClass('col-sm-1'); 
+        $(this).siblings('.postText').removeClass('col-sm-6');
+        $(this).siblings('.postText').addClass('col-sm-11');   
+        $(this).siblings('.postText').children('.postDescription').addClass('hidden');
+      }
+    });
+
   });
 
 $(document).ready(function(){
@@ -154,6 +171,9 @@ $(document).ready(function(){
   }else{
     $('#map').css({'height': vph - 50 });
   }
+  //$('#map').hide();
+  //$('.contentListing').show();
+  //$('.contentHeader').css({'position' : 'relative'});
 });
 
 $(window).resize(function() {

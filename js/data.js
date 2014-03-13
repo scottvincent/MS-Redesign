@@ -93,6 +93,21 @@ function showInfo(data, tabletop) {
       $(content).appendTo(groupID); 
     }
   })
+
+  // Print All Items
+  $.each( tabletop.sheets("Items").all(), function(i, items) {
+    var content = "<li class='filter" + items.type + "'>";
+    content+= "<div class='postThumb col-sm-1'><div class='content'><img src='" + items.image + "' /></div></div>";
+    content+= "<div class='postText col-sm-11'>";
+    content+= "<div class='postTitle'>" + items.title + "</div>";
+    content+= "<div class='postDescription hidden'>" + items.description + "</div>";
+    content+= "<div class='postSourceUser'><a href=''><img src='http://www.google.com/s2/favicons?domain=" + items.network + "'> " + items.username + "</a></div>";
+    content+= "<div class='postDate'>" + items.date + "</div>";
+    content+= "<div class='postLinks'><a href=''>Verify</a> <a href=''>Source</a> <a href=''>Map</a> <a href=''>Save</a> <a href=''>Translate</a></div>";
+    content+= "</div>";
+    content+= "<div class='clearfix'></div></li>";
+    $(content).appendTo("#postList");
+  })
   
   // Add Sonar Count on Menus
   $(".groupLink").each(function() {
@@ -108,7 +123,7 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AvU6y
 
 Tabletop.init( { key: public_spreadsheet_url,
  callback: showInfo,
- wanted: [ "Sonars" ],
+ wanted: [ "Sonars", "Items" ],
  debug: true } )
 
               
