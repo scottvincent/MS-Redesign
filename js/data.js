@@ -103,7 +103,7 @@ function showInfo(data, tabletop) {
     content+= "<div class='postDescription hidden'>" + items.description + "</div>";
     content+= "<div class='postSourceUser'><a href=''><img src='http://www.google.com/s2/favicons?domain=" + items.network + "'> " + items.username + "</a></div>";
     content+= "<div class='postDate'>" + items.date + "</div>";
-    content+= "<div class='postLinks'><a href=''>Verify</a> <a href=''>Source</a> <a href=''>Map</a> <a href=''>Save</a> <a href=''>Translate</a></div>";
+    content+= "<div class='postLinks hidden'><a href=''>Verify</a> <a href=''>Source</a> <a href=''>Map</a> <a href=''>Save</a> <a href=''>Get Metadata</a> <a href=''>Translate</a></div>";
     content+= "</div>";
     content+= "<div class='clearfix'></div></li>";
     $(content).appendTo("#postList");
