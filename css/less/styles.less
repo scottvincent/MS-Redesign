@@ -294,8 +294,12 @@ body{
 		padding: 0;
 		list-style: none;
 		& li{
-			padding: 0.25em 0;
+			margin: 0.5em 0;
+			padding: 0.25em;
 			font-size: 12px;
+			&.active{
+			    .box-shadow(inset 0 0 0 1px fade(desaturate(@brand-primary, 50%), 25%));
+			}
 			&:nth-child(odd){
 				//background: rgba(0,0,0,0.1);
 			}
@@ -321,6 +325,8 @@ body{
     			    max-width: 100%;
     			    max-height: 100%;
     			}
+			}
+			& .postText{
 			}
 			& .postTitle{
 			    font-size: 1.5em;
