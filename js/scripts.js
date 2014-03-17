@@ -173,9 +173,9 @@ $(document).ready(function(){
   }else{
     $('#map').css({'height': vph - 50 });
   }
-  $('#map').hide();
-  $('.contentListing').show();
-  $('.contentHeader').css({'position' : 'relative'});
+  //$('#map').hide();
+  //$('.contentListing').show();
+  //$('.contentHeader').css({'position' : 'relative'});
 });
 
 $(window).resize(function() {
