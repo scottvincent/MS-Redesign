@@ -1,7 +1,7 @@
 MS-Redesign
 ===========
 
-An Unsolicited Redesign of Media Sonar
+An Unsolicited Redesign of a social media web application
 
 
 Bootstrap 3.1
